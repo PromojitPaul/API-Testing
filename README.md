@@ -1,100 +1,82 @@
-# API Testing Automation Project
+# API Testing Project
 
 ## About
-This project is an **API testing framework** designed to validate the functionality, reliability, performance, and security of APIs. Built using **Postman and RestAssured with Java**, it ensures efficient API automation, covering various testing methodologies like functional, regression, and performance testing. The project follows **SDET best practices** to enhance API quality, maintainability, and CI/CD integration.
+This project tests APIs using **Postman and RestAssured with Java**. It covers functional, regression, and performance testing to ensure API reliability.
 
-## Key Features
-- Automated API test execution using **Postman and RestAssured**.
-- Validates **GET, POST, PUT, DELETE** API endpoints.
-- Implements **data-driven testing** using external JSON/CSV files.
-- **Response validation** with assertions on status codes, headers, and body.
-- **Authentication testing** (OAuth, JWT, API Key, Basic Auth).
-- **Performance testing** using JMeter.
-- **CI/CD integration** for automated API validation.
-- Detailed **test reports** using Newman, Allure, and Extent Reports.
+## Features
+- Tests **GET, POST, PUT, DELETE** requests.
+- Validates responses, status codes, and headers.
+- Supports authentication methods (OAuth, JWT, API Key, Basic Auth).
+- Runs tests using **Postman and Newman**.
+- Generates reports using **Newman and Extent Reports**.
+- Integrates with CI/CD pipelines.
 
 ## Technologies Used
-- **API Testing Tools**: Postman, RestAssured
-- **Programming Language**: Java
+- **Tools**: Postman, RestAssured
+- **Language**: Java
 - **Test Framework**: TestNG
 - **Build Tool**: Maven
 - **Performance Testing**: JMeter
-- **Reporting**: Allure, Extent Reports, Newman
-- **Version Control**: Git, GitHub
+- **Reporting**: Newman, Extent Reports
 - **CI/CD**: GitHub Actions, Jenkins
 
-## Installation & Setup
+## Setup
 1. Clone the repository:
    ```sh
    git clone https://github.com/PromojitPaul/API-Testing.git
    ```
-2. Navigate to the project directory:
+2. Navigate to the directory:
    ```sh
    cd API-Testing
    ```
-3. Install dependencies using Maven:
+3. Install dependencies:
    ```sh
    mvn clean install
    ```
 
-## Running API Tests
-- Execute all Postman API tests using Newman:
+## Running Tests
+- Run Postman tests with Newman:
   ```sh
   newman run collection.json -e environment.json
   ```
-- Run API tests using RestAssured with Maven:
+- Run API tests with Maven:
   ```sh
   mvn test
   ```
-- Generate Allure reports:
+- Generate reports:
   ```sh
   mvn allure:serve
   ```
 
-## Test Coverage
-- **Functional Testing**: Validates API request-response integrity.
-- **Security Testing**: Tests authentication and authorization mechanisms.
-- **Regression Testing**: Ensures existing APIs work after new updates.
-- **Performance Testing**: Evaluates API response time and scalability.
-- **Error Handling**: Tests API behavior for invalid inputs and edge cases.
-
 ## Folder Structure
 ```
 ├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── base/             # Base setup for API requests
-│   │   │   ├── utils/            # Utility classes for request handling, data management
-│   ├── test/
-│   │   ├── java/
-│   │   │   ├── tests/            # API test scripts
-│   │   │   │   ├── GetAPITest.java
-│   │   │   │   ├── PostAPITest.java
-│   │   │   │   ├── PutAPITest.java
-│   │   │   │   ├── DeleteAPITest.java
-│   │   │   ├── testdata/         # Test data files (JSON, CSV)
+│   ├── main/java/
+│   │   ├── base/            # API request setup
+│   │   ├── utils/           # Utility classes
+│   ├── test/java/tests/     # API test scripts
+│   │   ├── GetAPITest.java
+│   │   ├── PostAPITest.java
+│   │   ├── PutAPITest.java
+│   │   ├── DeleteAPITest.java
+│   │   ├── testdata/        # Test data (JSON, CSV)
 │   ├── resources/
-│   │   ├── postman/
-│   │   │   ├── collection.json   # Postman test collection
-│   │   │   ├── environment.json  # Postman environment variables
-│   │   ├── config.properties     # API base URL and credentials
-│   │   ├── testng.xml            # TestNG execution configuration
-├── reports/                      # API test execution reports
-│   ├── allure-results/           # Allure test reports
-│   ├── extent-reports/           # Extent report logs
-├── logs/                         # API test execution logs
-├── pom.xml                        # Maven dependencies
-├── README.md                      # Documentation
+│   │   ├── postman/         # Postman collections
+│   │   │   ├── collection.json
+│   │   │   ├── environment.json
+│   │   ├── config.properties # API configurations
+│   │   ├── testng.xml        # Test execution config
+├── reports/                 # Test reports
+├── logs/                    # Execution logs
+├── pom.xml                   # Maven dependencies
+├── README.md                 # Documentation
 ```
 
 ## CI/CD Integration
-- Configured **GitHub Actions/Jenkins** for automated API test execution.
-- Test execution triggered on **code push or pull requests**.
-- Reports generated after test execution for tracking results.
-
-## Conclusion
-This **API testing automation** project demonstrates expertise in **API validation, automation frameworks, and CI/CD pipelines**, making it an ideal addition to an SDET/QA portfolio.
+- Tests run on **code push and pull requests**.
+- Automated test execution using **GitHub Actions/Jenkins**.
+- Reports generated after execution.
 
 ## Contact
-For more details, explore the repository or connect via GitHub.
+For more details, check the repository or connect via GitHub.
 
